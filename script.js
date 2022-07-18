@@ -27,22 +27,6 @@ const getPlayerChoice = (input) => {
     };
 };
 
-// Function that plays a round and returns a winner.
-
-// const playRound = (playerSelection, computerSelection) => {
-    
-//     if (playerSelection === computerSelection) {
-//         return 'Game Tied';
-//     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-//         return 'Game Lost';
-//     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-//         return 'Game Lost';
-//     }else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-//         return 'Game Lost';
-//     } else {
-//         return 'Game Won';
-//     };
-// };
 
 const playRound = (playerSelection, computerSelection) => {
     // When the game ties.
