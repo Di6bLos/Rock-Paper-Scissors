@@ -1,6 +1,6 @@
 "use strict"
 
-// Creating a funtion Where the computer will pick a random number between 0-2. 
+// Function where the computer will pick a random number between 0-2. 
 // And then assign one of the playable choices to the number.
 
 const getComputerChoice = () => {
@@ -15,4 +15,16 @@ const getComputerChoice = () => {
         };
 };
 
-console.log(getComputerChoice());
+// Function that retreives the players choice.
+
+const getPlayerChoice = (input) => {
+    input = input.toLowerCase();
+
+    if (input === 'rock' || input === 'paper' || input === 'scissors') {
+        return input;
+    } else {
+        return 'Sorry, not a valid option.'
+    };
+};
+
+console.log(getPlayerChoice(''));
