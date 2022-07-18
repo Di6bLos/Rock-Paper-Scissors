@@ -27,4 +27,19 @@ const getPlayerChoice = (input) => {
     };
 };
 
-console.log(getPlayerChoice(''));
+// Creating the game function.
+
+const runGame = (getComputerChoice, getPlayerChoice) => {
+    let cpuChoice = getComputerChoice;
+    let userChoice = getPlayerChoice;
+
+    if (cpuChoice === userChoice) {
+        return 'Game Tied';
+    } 
+};
+
+
+
+console.log(`The cpu chose, ${getComputerChoice()}.
+You chose, ${getPlayerChoice('rock')}. `+ runGame());
+
