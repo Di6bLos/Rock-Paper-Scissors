@@ -23,23 +23,52 @@ const getPlayerChoice = (input) => {
     if (input === 'rock' || input === 'paper' || input === 'scissors') {
         return input;
     } else {
-        return 'Sorry, not a valid option.'
+        return 'Sorry, not a valid option'
     };
 };
 
-// Creating the game function.
+// Function that plays a round and returns a winner.
 
-const runGame = (getComputerChoice, getPlayerChoice) => {
-    let cpuChoice = getComputerChoice;
-    let userChoice = getPlayerChoice;
+// const playRound = (playerSelection, computerSelection) => {
+    
+//     if (playerSelection === computerSelection) {
+//         return 'Game Tied';
+//     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+//         return 'Game Lost';
+//     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+//         return 'Game Lost';
+//     }else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+//         return 'Game Lost';
+//     } else {
+//         return 'Game Won';
+//     };
+// };
 
-    if (cpuChoice === userChoice) {
+const playRound = (playerSelection, computerSelection) => {
+    // When the game ties.
+    if (playerSelection === computerSelection) {
         return 'Game Tied';
-    } 
+    }   // When the player chooses the losing hand.
+    else if (playerSelection === 'rock' && computerSelection === 'paper' ||
+    playerSelection === 'paper' && computerSelection === 'scissors' ||
+    playerSelection === 'scissors' && computerSelection === 'rock') {
+        return 'Game Lost';
+    }   // When the player chooses the winning hand.
+    else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
+    playerSelection === 'paper' && computerSelection === 'rock' ||
+    playerSelection === 'scissors' && computerSelection === 'paper') {
+        return 'Game Won';
+    } else {
+        return 'Try Again';
+    };
 };
 
 
+let computerSelection = getComputerChoice();
+let playerSelection = getPlayerChoice('rock');
 
-console.log(`The cpu chose, ${getComputerChoice()}.
-You chose, ${getPlayerChoice('rock')}. `+ runGame());
+console.log(`Player chose: ${playerSelection}. CPU chose: ${computerSelection}. ` + playRound(playerSelection, computerSelection));
+
+
+
 
