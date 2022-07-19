@@ -34,24 +34,37 @@ const playRound = (playerSelection, computerSelection) => {
         return 'Game Tied';
     }   // When the player chooses the losing hand.
     else if (playerSelection === 'rock' && computerSelection === 'paper' ||
-    playerSelection === 'paper' && computerSelection === 'scissors' ||
-    playerSelection === 'scissors' && computerSelection === 'rock') {
-        return 'Game Lost';
+        playerSelection === 'paper' && computerSelection === 'scissors' ||
+        playerSelection === 'scissors' && computerSelection === 'rock') {
+            return 'Game Lost';
     }   // When the player chooses the winning hand.
     else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
-    playerSelection === 'paper' && computerSelection === 'rock' ||
-    playerSelection === 'scissors' && computerSelection === 'paper') {
-        return 'Game Won';
-    } else {
-        return 'Try Again';
+        playerSelection === 'paper' && computerSelection === 'rock' ||
+        playerSelection === 'scissors' && computerSelection === 'paper') {
+            return 'Game Won';
+        } else {
+            return 'Try Again';
     };
 };
 
+// function tht initiates 5 rounds with the cpu. 
+const game = () => {
+    for (let i = 0; i < 5; i++) {  
+        let computerSelection = getComputerChoice();
+        let playerSelection = getPlayerChoice(prompt("Make your choice. 'rock', 'paper', or 'scissors'?"));
+        
+        console.log(`Player chose: ${playerSelection}. CPU chose: ${computerSelection}. ` + playRound(playerSelection, computerSelection));
+    };
+};
 
-let computerSelection = getComputerChoice();
-let playerSelection = getPlayerChoice('rock');
+game();
 
-console.log(`Player chose: ${playerSelection}. CPU chose: ${computerSelection}. ` + playRound(playerSelection, computerSelection));
+
+
+
+
+
+
 
 
 
