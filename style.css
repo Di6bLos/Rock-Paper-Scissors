@@ -31,16 +31,28 @@ h1, h2, h3, .score {
 h1, h2{
     margin:1em;
 }
-
-
+h1 {
+    padding-top: 1em;
+    font-size: 2em;
+}
+h3 {
+    padding-bottom: .5em;
+    text-decoration: underline;
+}
+.score {
+    font-size: 2em;
+}
+#gameScore {
+    font-size: 3em;
+}
 
 /* ================== */
 
 
 .container {
     margin: 0 auto;
-    padding: 1em;
-    background-color: #c4c4c4;
+    padding: 0 1em 1em;
+    background-color: #f4f4f4;
     max-width: 550px;
 }
 
@@ -62,6 +74,12 @@ h1, h2{
 .weapons {
     display: flex;
 }
-.weapon-card, button {
+.weapon-card, .weapon-button {
+    padding: 1rem;
+}
+.weapon-button {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #c4c4c4 black black #c4c4c4;
     background-color: white;
 }
