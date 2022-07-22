@@ -8,6 +8,60 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script src="script.js"></script>
+<main>
+   <section class="container">
+    <h1>Rock, Paper, Scissors</h1>
+    <div class="wrap versus-board">
+        <div class="profile player">
+            <img src="images/user-profile.png" alt="profile-icon">
+        </div>
+        <h2>VS</h2>
+        <div class="profile machine">
+            <img src="images/robot-profile.png" alt="">
+        </div>
+    </div>
+    <div class="wrap score-board">
+        <div class="score-card player-score-card">
+            <h3 class="player-name">Human</h3>
+            <p class="score" id="playerScore">0</p>
+        </div>
+        <div class="score-card game-score-card">
+            <h2>GAME</h2>
+            <p class="score" id="gameScore">1</p>
+        </div>
+        <div class="score-card computer-score-card">
+            <h3 class="player-name">Machine</h3>
+            <p class="score" id="computerScore">0</p>
+        </div>
+    </div>
+    <div class="wrap weapon-board">
+        <h2>Choose your weapon...</h2>
+        <div class="weapons">
+            <div class="weapon-card" id="weaponCardRock">
+                <h3>Rock</h3>
+                <button class="weapon-button" id="rock">
+                    <img src="images/rock.png" alt="rock">
+                </button>
+            </div>
+            <div class="weapon-card" id="weaponCardPaper">
+                <h3>Paper</h3>
+                <button class="weapon-button" id="paper">
+                    <img src="images/paper.png" alt="paper">
+                </button>
+            </div>
+            <div class="weapon-card" id="weaponCardScissors">
+                <h3>Scissors</h3>
+                <button class="weapon-button" id="scissors">
+                    <img src="images/scissors.png" alt="scissors">
+                </button>
+            </div>
+
+        </div>
+    </div>   
+       
+</section> 
+    
+</main>
+ <!-- <script src="script.js"></script> -->
 </body>
 </html>
