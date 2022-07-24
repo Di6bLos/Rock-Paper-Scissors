@@ -42,7 +42,7 @@ h3 {
 .score {
     font-size: 2em;
 }
-#gameScore {
+#gameRound {
     font-size: 3em;
 }
 
@@ -74,7 +74,7 @@ h3 {
 .weapons {
     display: flex;
 }
-.weapon-card, .weapon-button {
+.weapon-card {
     padding: 1rem;
 }
 .weapon-button {
@@ -82,4 +82,10 @@ h3 {
     border-style: solid;
     border-color: #c4c4c4 black black #c4c4c4;
     background-color: white;
+    padding: .5em;
+}
+
+.start {
+    display: block;
+    margin: 1em auto;
 }
