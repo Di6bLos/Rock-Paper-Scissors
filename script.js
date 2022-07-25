@@ -65,8 +65,9 @@ const playRound = (playerSelection, computerSelection) => {
 weapons.forEach((weapon)=> {
     weapon.addEventListener('click', (e)=> {
         let playerInput = e.target.id;
+        let computerInput = getComputerChoice();
         e.stopPropagation();
-        console.log(playerInput);
+        console.log(playRound(playerInput, computerInput));
         
     }, true);
 });
