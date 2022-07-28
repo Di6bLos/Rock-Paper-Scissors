@@ -72,13 +72,14 @@ h3 {
     display: flex;
 }
 .weapon-card {
-    padding: 1rem;
+    padding: .5rem;
 }
 .weapon-button {
     border-width: 4px;
     border-style: solid;
     border-color: #c4c4c4 black black #c4c4c4;
     background-color: white;
+    width: 100%;
 }
 
 .start {
