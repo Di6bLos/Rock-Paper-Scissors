@@ -81,7 +81,19 @@ function updateScore() {
 
 };
 
+// Deciding the winner
+function checkWinner() {
+    if (pScore == 5 || cScore == 5) {
+        if (pScore == 5) {
+            window.location.reload(true);
+            alert('Congrats. Keep Playing?');
+        } else if (cScore == 5) {
+            window.location.reload(true);
+            alert('You Lost. Try Again?');
 
+        }
+    }
+};
 
 
 
@@ -99,7 +111,7 @@ weapons.forEach((weapon)=> {
         console.log(playRound(playerInput, computerInput));
        //playRound(playerInput, computerInput);
         updateScore();
-        
+        checkWinner();
     });
 });
 
