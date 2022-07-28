@@ -5,9 +5,17 @@ const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 const weapons = document.querySelectorAll('.weapon-button');
-const gameRound = document.getElementById('gameRound');
-const playerScore = document.getElementById('playerScore');
-const computerScore = document.getElementById('computerScore');
+const gameBoard = document.getElementById('gameBoard');
+const playerBoard = document.getElementById('playerBoard');
+const computerBoard = document.getElementById('computerBoard');
+
+let cScore = 0;
+let pScore = 0;
+let gameRound = 1;
+
+gameBoard.innerText = gameRound;
+computerBoard.innerText = cScore;
+playerBoard.innerText = pScore;
 
 
 
@@ -30,49 +38,70 @@ const getComputerChoice = () => {
 // Function that retreives the players choice.
 
 // const getPlayerChoice = (input) => {
-//     input = input.toLowerCase();
+    //     input = input.toLowerCase();
     
-//     if (input === 'rock' || input === 'paper' || input === 'scissors') {
-//         return input;
-//     } else {
-//         return 'Sorry, not a valid option'
-//     };
-// };
-
-
-const playRound = (playerSelection, computerSelection) => {
+    //     if (input === 'rock' || input === 'paper' || input === 'scissors') {
+        //         return input;
+        //     } else {
+            //         return 'Sorry, not a valid option'
+            //     };
+            // };
+            
+            
+    const playRound = (playerSelection, computerSelection) => {
+   
     // When the game ties.
     if (playerSelection === computerSelection) {
+        gameRound++;
         return 'Game Tied';
     }   // When the player chooses the losing hand.
     else if (playerSelection === 'rock' && computerSelection === 'paper' ||
     playerSelection === 'paper' && computerSelection === 'scissors' ||
     playerSelection === 'scissors' && computerSelection === 'rock') {
+        gameRound++;
+        cScore++;
         return 'Game Lost';
     }   // When the player chooses the winning hand.
     else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
     playerSelection === 'paper' && computerSelection === 'rock' ||
     playerSelection === 'scissors' && computerSelection === 'paper') {
+        gameRound++;
+        pScore++;
         return 'Game Won';
     } else {
         return 'Try Again';
     };
 };
 
+//Funtion that updates the score when called on through the even Listener
+function updateScore() {
+    gameBoard.innerText = gameRound;
+    computerBoard.innerText = cScore;
+    playerBoard.innerText = pScore;
+
+};
+
+
+
+
+
+
+
+
+
 // Adding event Listeners to the button elements
 
 
 weapons.forEach((weapon)=> {
     weapon.addEventListener('click', (e)=> {
-        let playerInput = e.target.id;
-        let computerInput = getComputerChoice();
-        e.stopPropagation();
+        const playerInput = e.target.id;
+        const computerInput = getComputerChoice();
         console.log(playRound(playerInput, computerInput));
+       //playRound(playerInput, computerInput);
+        updateScore();
         
-    }, true);
+    });
 });
-
-
 
 
 
