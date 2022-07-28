@@ -1,6 +1,5 @@
 "use strict"
 // Dom objects
-
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
@@ -16,8 +15,6 @@ let gameRound = gameBoard.innerText;
 
 computerBoard.innerText = cScore;
 playerBoard.innerText = pScore;
-
-
 
 
 // Function where the computer will pick a random number between 0-2. 
@@ -84,19 +81,19 @@ function checkWinner() {
 };
 
 // Adding event Listeners to the input elements, that will iniciate each round
+
+const clickButton = (e) => {
+    const playerInput = e.target.id;
+    const computerInput = getComputerChoice();
+    playRound(playerInput, computerInput);
+    checkWinner();
+    updateScore();
+};
+
+
 weapons.forEach((weapon)=> {
-    weapon.addEventListener('click', (e)=> {
-        const playerInput = e.target.id;
-        const computerInput = getComputerChoice();
-       playRound(playerInput, computerInput);
-       checkWinner();
-       updateScore();
-    });
+    weapon.addEventListener('click', clickButton);
 });
-
-
-
-
 
 
 
