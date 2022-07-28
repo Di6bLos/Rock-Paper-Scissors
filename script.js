@@ -11,9 +11,8 @@ const computerBoard = document.getElementById('computerBoard');
 
 let cScore = 0;
 let pScore = 0;
-let gameRound = 1;
+let gameRound = gameBoard.innerText;
 
-gameBoard.innerText = gameRound;
 computerBoard.innerText = cScore;
 playerBoard.innerText = pScore;
 
@@ -52,20 +51,20 @@ const getComputerChoice = () => {
    
     // When the game ties.
     if (playerSelection === computerSelection) {
-        gameRound++;
+        gameRound = 'Tied';
         return 'Game Tied';
     }   // When the player chooses the losing hand.
     else if (playerSelection === 'rock' && computerSelection === 'paper' ||
     playerSelection === 'paper' && computerSelection === 'scissors' ||
     playerSelection === 'scissors' && computerSelection === 'rock') {
-        gameRound++;
+        gameRound = 'Lost';
         cScore++;
         return 'Game Lost';
     }   // When the player chooses the winning hand.
     else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
     playerSelection === 'paper' && computerSelection === 'rock' ||
     playerSelection === 'scissors' && computerSelection === 'paper') {
-        gameRound++;
+        gameRound = 'Won';
         pScore++;
         return 'Game Won';
     } else {
@@ -86,7 +85,7 @@ function checkWinner() {
     if (pScore == 5 || cScore == 5) {
         if (pScore == 5) {
             window.location.reload(true);
-            alert('Congrats. Keep Playing?');
+            alert('Congrats, you won! Keep Playing?');
         } else if (cScore == 5) {
             window.location.reload(true);
             alert('You Lost. Try Again?');
@@ -110,8 +109,8 @@ weapons.forEach((weapon)=> {
         const computerInput = getComputerChoice();
         console.log(playRound(playerInput, computerInput));
        //playRound(playerInput, computerInput);
-        updateScore();
-        checkWinner();
+       checkWinner();
+       updateScore();
     });
 });
 
