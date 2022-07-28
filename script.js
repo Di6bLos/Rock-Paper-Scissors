@@ -9,6 +9,7 @@ const gameBoard = document.getElementById('gameBoard');
 const playerBoard = document.getElementById('playerBoard');
 const computerBoard = document.getElementById('computerBoard');
 
+// Variables to control the display
 let cScore = 0;
 let pScore = 0;
 let gameRound = gameBoard.innerText;
@@ -34,21 +35,9 @@ const getComputerChoice = () => {
     };
 };
 
-// Function that retreives the players choice.
-
-// const getPlayerChoice = (input) => {
-    //     input = input.toLowerCase();
-    
-    //     if (input === 'rock' || input === 'paper' || input === 'scissors') {
-        //         return input;
-        //     } else {
-            //         return 'Sorry, not a valid option'
-            //     };
-            // };
+// Decides the winner of the round, and updates the score
             
-            
-    const playRound = (playerSelection, computerSelection) => {
-   
+ const playRound = (playerSelection, computerSelection) => {
     // When the game ties.
     if (playerSelection === computerSelection) {
         gameRound = 'Tied';
@@ -94,51 +83,16 @@ function checkWinner() {
     }
 };
 
-
-
-
-
-
-
-// Adding event Listeners to the button elements
-
-
+// Adding event Listeners to the input elements, that will iniciate each round
 weapons.forEach((weapon)=> {
     weapon.addEventListener('click', (e)=> {
         const playerInput = e.target.id;
         const computerInput = getComputerChoice();
-        console.log(playRound(playerInput, computerInput));
-       //playRound(playerInput, computerInput);
+       playRound(playerInput, computerInput);
        checkWinner();
        updateScore();
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function tht initiates 5 rounds with the cpu. 
-// const game = () => {
-//     for (let i = 0; i < 5; i++) {  
-//         let computerSelection = getComputerChoice();
-//         let playerSelection = getPlayerChoice();
-        
-        
-        
-        
-//         console.log(`Player chose: ${playerSelection}. CPU chose: ${computerSelection}. ` +
-//          playRound(playerSelection, computerSelection));
-//     };
-// };
 
 
 
